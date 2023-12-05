@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados de Micropartículas</title>
+</head>
+<body>
+
+<h1>Dados de Micropartículas</h1>
+
+
+<div id="micropar-container"></div>
+
+
+<script>
+    async function fetchMicroparData() {
+        try {
+            const response = await fetch('/microparticulas/');
+            const data = await response.json();
+
+            
+            const microparContainer = document.getElementById('micropar-container');
+            microparContainer.innerHTML = JSON.stringify(data, null, 2);
+        } catch (error) {
+            console.error('Erro ao buscar dados de micropartículas:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        fetchMicroparData();
+    });
+</script>
+
+</body>
+</html>

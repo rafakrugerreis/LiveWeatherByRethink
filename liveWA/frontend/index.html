@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Dados</title>
+</head>
+<body>
+
+<h1>Dados da Estação Meteorológica</h1>
+
+
+<div id="data-container"></div>
+
+
+<script>
+    async function fetchData() {
+        try {
+            const response = await fetch('/dados/');
+            const data = await response.json();
+
+            // Exemplo: exibindo dados em um div
+            const dataContainer = document.getElementById('data-container');
+            dataContainer.innerHTML = JSON.stringify(data, null, 2);
+        } catch (error) {
+            console.error('Erro ao buscar dados:', error);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        fetchData();
+    });
+</script>
+
+</body>
+</html>

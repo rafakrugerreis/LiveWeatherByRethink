@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Montserrat&family=Poppins&display=swap" rel="stylesheet" />
+    <link rel="icon" href="data:,"> 
+    <title>Live Weather Rethink</title>
+</head>
+<body>
+    <header>
+        <img src="../Logo.png" alt="Logo" class="logo">
+        <h1>Live Weather</h1>
+    </header>
+    
+    <form id="search_form" class="search-form">
+        <input type="text" class="form-control" placeholder="Digite a cidade" id="search_input">
+        <button type="button" class="btn" id="search_button">Pesquisar</button>
+    </form>
+    
+    <div id="cards-container">
+        <div id="weather-container" class="card-container"></div>
+        <div id="microparticulas-container" class="card-container"></div>
+    </div>
+    <div id="city-weather-container" class="card-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
